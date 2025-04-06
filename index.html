@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beauty & Hair by Lana</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f9f6f1;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: #222;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #c49b63;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #444;
+      margin: 4px 0;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #fff;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background-color: #c49b63;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #b3884d;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #222;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      text-align: center;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+    /* Lightbox Styles */
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: 30px auto 0 auto;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+      resize: none;
+    }
+
+    button {
+      padding: 12px;
+      background-color: #c49b63;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #b3884d;
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 40px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 999;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Close Button in Lightbox */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10000;
+    transition: opacity 0.3s ease;
+  }
+  
+  .close-btn:hover {
+    opacity: 0.7;
+  }
+  
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Beauty & Hair by Lana</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav id="nav">
+      <a href="#about">O nas</a>
+      <a href="#services">Storitve</a>
+      <a href="#gallery">Galerija</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Dobrodošli v svetu lepote</h2>
+    <p>Frizerske in kozmetične storitve v osrčju Polhovega Gradca</p>
+    <a href="#contact" class="btn">Rezerviraj termin</a>
+  </section>
+
+  <section id="about">
+    <h2>O nas</h2>
+    <p>Beauty & Hair by Lana je prostor, kjer se lepota sreča z minimalizmom. Lana Jankovec, izkušena frizerka in kozmetičarka, vam nudi profesionalne storitve v prijetnem, elegantnem ambientu. Prisluhnemo vašim željam in poskrbimo, da boste zasijali.</p>
+  </section>
+
+  <section id="services">
+    <h2>Storitve</h2>
+    <ul>
+      <li><strong>Frizerske storitve:</strong> striženje, barvanje, oblikovanje</li>
+      <li><strong>Kozmetične storitve:</strong> nega obraza, manikira, pedikura</li>
+      <li><strong>Svečane pričeske & makeup:</strong> za poroke in posebne priložnosti</li>
+      <li><strong>Depilacija & nega obrvi/trepalnic</strong></li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <h2>Galerija</h2>
+    <div class="gallery">
+      <img src="https://lassana.si/wp-content/themes/yootheme/cache/de/banner_frizerstvo-dee35a1b.jpeg" alt="Primer storitve">
+      <img src="https://lassana.si/wp-content/uploads/2016/04/Lassana-Slovenska27-3.jpg" alt="Salon ambient">
+      <img src="https://lassana.si/wp-content/themes/yootheme/cache/5f/storitve_licenje-5f3623d4.jpeg" alt="Makeup">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Kontakt</h2>
+    <p style="text-align: center;">
+        <strong>Lokacija:</strong> Polhov Gradec, Slovenija<br>
+        <strong>Telefon:</strong> <a href="tel:+38640123456">051 306 150</a><br>
+        <strong>Instagram:</strong> <a href="https://instagram.com/lanajankovec" target="_blank">@lanajankovec</a>
+    </p>
+
+    <form>
+      <input type="text" placeholder="Vaše ime" required>
+      <input type="email" placeholder="Vaš email" required>
+      <textarea rows="4" placeholder="Sporočilo ali želena storitev"></textarea>
+      <button type="submit">Pošlji</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Beauty & Hair by Lana | Vse pravice pridržane
+  </footer>
+
+  <!-- Lightbox -->
+<div id="lightbox">
+    <span class="close-btn" onclick="closeLightbox()">✕</span>
+    <img src="" alt="Povečana slika">
+  </div>
+  
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav').classList.toggle('active');
+    }
+
+    // Lightbox script
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+      }      
+  </script>
+
+</body>
+</html>
