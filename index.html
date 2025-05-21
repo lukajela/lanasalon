@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Epic Moto Tours</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .hero-static {
+      height: 75vh;
+      background-image: url('static/images/balkanska.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-static .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px 50px;
+      color: white;
+      border-radius: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="static/images/logo.PNG" alt="Logo" />
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Domov</a></li>
+        <li class="dropdown">
+          <a href="ture.html">Ture <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-content">
+            <li><a href="balkanska.html">Balkanska</a></li>
+            <li><a href="alpska.html">Alpska</a></li>
+            <li><a href="jadranska.html">Jadranska</a></li>
+          </ul>
+        </li>
+        <li><a href="cenik.html">Cenik</a></li>
+        <li><a href="seznam.html">Oprema</a></li>
+        <li><a href="iframe.html">Lokacija</a></li>
+        <li><a href="prijava.html">Prijava</a></li>
+        <li><a href="kontakt.html" class="btn">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- HERO STATIČNA SLIKA -->
+  <section class="hero-static">
+    <div class="overlay">
+      <h1>Balkanska ekspedicija</h1>
+      <a href="ture.html" class="btn">Več o turah</a>
+    </div>
+  </section>
+
+  <!-- O PODJETJU -->
+  <section class="about">
+    <h2>O podjetju</h2>
+    <p>Epic Moto Tours je strastno podjetje, ki že več kot 10 let vodi motoristične ture po Evropi. Naše ture pokrivajo slikovite alpske prelaze, divji Balkan, obalne ceste Jadrana in še več. Združujemo izkušnje, varnost, avanturo in ljubezen do dveh koles.</p>
+  </section>
+
+  <!-- GALERIJA -->
+  <section class="gallery">
+    <h2>Naši trenutki</h2>
+    <div class="grid">
+      <img src="static/images/galerija1.jpg" alt="Galerija 1">
+      <img src="static/images/galerija2.jpg" alt="Galerija 2">
+      <img src="static/images/galerija3.jpg" alt="Galerija 3">
+      <img src="static/images/galerija4.jpg" alt="Galerija 4">
+      <img src="static/images/galerija5.jpg" alt="Galerija 5">
+      <img src="static/images/galerija6.jpg" alt="Galerija 6">
+      <img src="static/images/galerija7.jpg" alt="Galerija 7">
+      <img src="static/images/galerija8.jpg" alt="Galerija 8">
+    </div>
+  </section>
+
+  <!-- KOLEDAR TUR -->
+  <section class="tour-calendar">
+    <h2>Koledar tur 2025</h2>
+    <div class="calendar-grid">
+      <div class="calendar-item">
+        <div class="calendar-date">3.–9. maj</div>
+        <div class="calendar-tour">Balkanska ekspedicija</div>
+      </div>
+      <div class="calendar-item">
+        <div class="calendar-date">17.–23. junij</div>
+        <div class="calendar-tour">Alpska avantura</div>
+      </div>
+      <div class="calendar-item">
+        <div class="calendar-date">5.–11. avgust</div>
+        <div class="calendar-tour">Jadranska obala</div>
+      </div>
+      <div class="calendar-item">
+        <div class="calendar-date">15.–21. september</div>
+        <div class="calendar-tour">Balkanska ekspedicija</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OCENE -->
+  <section class="reviews">
+    <h2>Ocene naših strank</h2>
+    <div class="review-grid">
+      <div class="review-card">
+        <p class="review-text">"Najboljša tura, kar sem jih doživel! Profesionalna organizacija, neverjetni razgledi."</p>
+        <div class="stars">★★★★★</div>
+        <p class="review-name">– Marko, Slovenija</p>
+      </div>
+      <div class="review-card">
+        <p class="review-text">"Balkanska ekspedicija je bila čista avantura! Se definitivno vrnem z družbo!"</p>
+        <div class="stars">★★★★☆</div>
+        <p class="review-name">– Ana, Hrvaška</p>
+      </div>
+      <div class="review-card">
+        <p class="review-text">"Vožnja ob Jadranski obali mi je ostala za vedno v spominu. Toplo priporočam!"</p>
+        <div class="stars">★★★★★</div>
+        <p class="review-name">– Luka, Nemčija</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-icons">
+      <a href="https://instagram.com/epic_moto_tours" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/Epic_moto_tours" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.youtube.com/@Epic_moto_tours" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>Kontakt: mototoursepic@gmail.com</p>
+    <p>&copy; 2025 Epic Moto Tours</p>
+  </footer>
+
+</body>
+</html>
