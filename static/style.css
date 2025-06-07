@@ -575,3 +575,20 @@ iframe {
   color: #222;
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  .hero-static {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .grid,
+  .calendar-grid,
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+}
