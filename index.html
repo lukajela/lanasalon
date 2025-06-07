@@ -35,7 +35,7 @@
         <img src="static/images/logo.PNG" alt="Logo" />
       </a>
     </div>
-    <nav>
+    <nav class="mobile-nav">
       <ul>
         <li><a href="index.html">Domov</a></li>
         <li class="dropdown">
@@ -53,6 +53,10 @@
         <li><a href="kontakt.html" class="btn">Kontakt</a></li>
       </ul>
     </nav>
+    <button class="hamburger" aria-label="Meni">
+      <i class="fas fa-bars"></i>
+    </button>
+
   </header>
 
 
@@ -140,6 +144,15 @@
     <p>Kontakt: mototoursepic@gmail.com</p>
     <p>&copy; 2025 Epic Moto Tours</p>
   </footer>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.mobile-nav');
+
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+</script>
 
 </body>
 </html>
