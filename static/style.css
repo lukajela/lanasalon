@@ -120,11 +120,16 @@ nav ul li:hover .dropdown-content {
   bottom: 20%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.6);
   padding: 30px;
   color: white;
-  border-radius: 10px;
   text-align: center;
+  /* From https://css.glass */
+  background: rgba(28, 23, 23, 0.34);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
+  border: 1px solid rgba(28, 23, 23, 0.06);
 }
 
 .slider-arrows {
@@ -160,6 +165,8 @@ nav ul li:hover .dropdown-content {
   border-radius: 10px;
   transition: transform 0.3s ease;
   cursor: pointer;
+  aspect-ratio: 3/2;
+  object-fit: fill;
 }
 
 .gallery img:hover {
@@ -202,6 +209,7 @@ nav ul li:hover .dropdown-content {
   box-shadow: 0 6px 16px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
 }
+
 
 .review-card:hover {
   transform: translateY(-5px);
@@ -576,19 +584,57 @@ iframe {
   text-align: center;
 }
 
+/* === Hamburger meni === */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive meni */
 @media (max-width: 768px) {
-  nav ul {
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #000;
+    width: 100%;
+    display: none;
     flex-direction: column;
+    padding: 20px;
   }
 
-  .hero-static {
-    height: auto;
-    padding: 40px 20px;
+  .mobile-nav.open {
+    display: flex;
+    animation: slideDown 0.4s ease-out forwards;
   }
 
-  .grid,
-  .calendar-grid,
-  .review-grid {
-    grid-template-columns: 1fr;
+  .mobile-nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .mobile-nav li a {
+    padding: 10px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Animacija odpiranja */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
