@@ -3,33 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Epic Moto Tours - motoristične ture po Balkanu, Alpah in Jadranu.">
   <title>Epic Moto Tours</title>
   <link rel="stylesheet" href="static/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    .hero-static {
-      height: 75vh;
-      background-image: url('static/images/balkanska.jpg');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero-static .overlay {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 30px 50px;
-      color: white;
-      border-radius: 10px;
-      text-align: center;
-    }
-  </style>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.1/lottie.min.js"></script>
 </head>
 <body>
 
   <!-- HEADER -->
-  <header>
+  <header class="hide-on-scroll">
     <div class="logo">
       <a href="index.html">
         <img src="static/images/logo.PNG" alt="Logo" />
@@ -60,60 +44,106 @@
   </header>
 
 
-  <!-- HERO STATIČNA SLIKA -->
-  <section class="hero-static">
+  <!-- HERO SLIKA SLIDER -->
+  <section class="hero-slider" data-aos="fade-in">
+    <div class="slide active" style="background-image: url('static/images/balkanska.jpg');"></div>
+    <div class="slide" style="background-image: url('static/images/jadranska.jpg');"></div>
+    <div class="slide" style="background-image: url('static/images/alpska.jpg');"></div>
+
     <div class="overlay">
-      <h1>Balkanska ekspedicija</h1>
-      <a href="ture.html" class="btn">Več o turah</a>
+      <h1>Dobrodošli na poti</h1>
+      <a href="ture.html" class="btn">Oglej si ture</a>
+    </div>
+
+    <div class="slider-arrows">
+      <span class="prev">&#10094;</span>
+      <span class="next">&#10095;</span>
     </div>
   </section>
+
+  
+  <section class="lottie-motor" data-aos="fade-in">
+    <div class="moving-container" id="motor-container">
+      <div id="motorLottie"></div>
+    </div>
+  </section>
+
+
+
+
 
   <!-- O PODJETJU -->
-  <section class="about">
+  <section class="about" data-aos="fade-up" data-aos-delay="100">
     <h2>O podjetju</h2>
-    <p>Epic Moto Tours je strastno podjetje, ki že več kot 10 let vodi motoristične ture po Evropi. Naše ture pokrivajo slikovite alpske prelaze, divji Balkan, obalne ceste Jadrana in še več. Združujemo izkušnje, varnost, avanturo in ljubezen do dveh koles.</p>
+    <p>
+      <strong>Epic Moto Tours</strong> je strastno podjetje, ki že več kot 10 let vodi motoristične ture po Evropi. Naša ekipa izkušenih vodičev in motoristov verjame v to, da je potovanje na dveh kolesih najčistejša oblika odkrivanja sveta.
+    </p>
+    <p>
+      Naše ture vključujejo slikovite <strong>alpske prelaze</strong>, nepozabne ceste <strong>divjega Balkana</strong>, zavite obalne poti <strong>Jadrana</strong> in številne skrite bisere, ki jih poznajo le lokalci.
+    </p>
+    <p>
+      Združujemo izkušnje, varnost, avanturo in ljubezen do vožnje. Na vsaki turi poskrbimo za vse – od načrtovanja poti, nastanitev, kulinaričnih postankov do tehnične podpore in vrhunske opreme.
+    </p>
+    <p>
+      Pridruži se nam in doživi svobodo, ki jo ponuja vožnja skozi najlepše pokrajine Evrope. <strong>To ni le izlet – to je doživetje.</strong>
+    </p>
   </section>
 
+
   <!-- GALERIJA -->
-  <section class="gallery">
+  <section class="gallery" data-aos="zoom-in" data-aos-delay="100">
     <h2>Naši trenutki</h2>
     <div class="grid">
-      <img src="static/images/galerija1.jpg" alt="Galerija 1">
-      <img src="static/images/galerija2.jpg" alt="Galerija 2">
-      <img src="static/images/galerija3.jpg" alt="Galerija 3">
-      <img src="static/images/galerija4.jpg" alt="Galerija 4">
-      <img src="static/images/galerija5.jpg" alt="Galerija 5">
-      <img src="static/images/galerija6.jpg" alt="Galerija 6">
-      <img src="static/images/galerija7.jpg" alt="Galerija 7">
-      <img src="static/images/galerija8.jpg" alt="Galerija 8">
+      <img src="static/images/galerija1.jpg" alt="Galerija 1" class="lightbox-item"  data-aos="zoom-in" data-aos-delay="100">
+      <img src="static/images/galerija2.jpg" alt="Galerija 2" class="lightbox-item"  data-aos="zoom-in" data-aos-delay="200">
+      <img src="static/images/galerija3.jpg" alt="Galerija 3" class="lightbox-item"  data-aos="zoom-in" data-aos-delay="300">
+      <img src="static/images/galerija4.jpg" alt="Galerija 4" class="lightbox-item"  data-aos="zoom-in" data-aos-delay="400">
+      <img src="static/images/galerija5.jpg" alt="Galerija 5" class="lightbox-item"  data-aos="zoom-in" data-aos-delay="500">
+      <img src="static/images/galerija6.jpg" alt="Galerija 6" class="lightbox-item"  data-aos="zoom-in" data-aos-delay="600">
+      <img src="static/images/galerija7.jpg" alt="Galerija 7" class="lightbox-item"  data-aos="zoom-in" data-aos-delay="700">
+      <img src="static/images/galerija8.jpg" alt="Galerija 8" class="lightbox-item"  data-aos="zoom-in"  data-aos-delay="800">
     </div>
   </section>
 
+  <!--INSTAGRAM-->
+  <section class="instagram-feed" data-aos="fade-in" data-aos-delay="100">
+    <h2>Spremljaj nas na Instagramu</h2>
+    <div class="feed-container">
+      <iframe src="https://cdn.lightwidget.com/widgets/88f4e12f9a7e5643a51fd99e.html" 
+              scrolling="no" 
+              allowtransparency="true" 
+              class="lightwidget-widget" 
+              style="width:100%;border:0;overflow:hidden;">
+      </iframe>
+    </div>
+  </section>
+
+
   <!-- KOLEDAR TUR -->
-  <section class="tour-calendar">
+  <section class="tour-calendar" data-aos="fade-right" data-aos-delay="100">
     <h2>Koledar tur 2025</h2>
     <div class="calendar-grid">
-      <div class="calendar-item">
-        <div class="calendar-date">3.–9. maj</div>
+      <div class="calendar-item" data-aos="fade-right" data-aos-delay="100">
+        <div class="calendar-date"><i class="fas fa-calendar-alt"></i> 3.–9. maj</div>
         <div class="calendar-tour">Balkanska ekspedicija</div>
       </div>
-      <div class="calendar-item">
-        <div class="calendar-date">17.–23. junij</div>
+      <div class="calendar-item" data-aos="fade-right" data-aos-delay="200">
+        <div class="calendar-date"><i class="fas fa-calendar-alt"></i>17.–23. junij</div>
         <div class="calendar-tour">Alpska avantura</div>
       </div>
-      <div class="calendar-item">
-        <div class="calendar-date">5.–11. avgust</div>
+      <div class="calendar-item" data-aos="fade-right" data-aos-delay="300">
+        <div class="calendar-date"><i class="fas fa-calendar-alt"></i>5.–11. avgust</div>
         <div class="calendar-tour">Jadranska obala</div>
       </div>
-      <div class="calendar-item">
-        <div class="calendar-date">15.–21. september</div>
+      <div class="calendar-item" data-aos="fade-right" data-aos-delay="400">
+        <div class="calendar-date"><i class="fas fa-calendar-alt"></i>15.–21. september</div>
         <div class="calendar-tour">Balkanska ekspedicija</div>
       </div>
     </div>
   </section>
 
   <!-- OCENE -->
-  <section class="reviews">
+  <section class="reviews" data-aos="fade-left">
     <h2>Ocene naših strank</h2>
     <div class="review-grid">
       <div class="review-card">
@@ -135,15 +165,52 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
+  <footer data-aos="fade-up" data-aos-delay="200">
     <div class="footer-icons">
       <a href="https://instagram.com/epic_moto_tours" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://facebook.com/Epic_moto_tours" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://facebook.com/Epic Moto Tours" target="_blank"><i class="fab fa-facebook"></i></a>
       <a href="https://www.youtube.com/@Epic_moto_tours" target="_blank"><i class="fab fa-youtube"></i></a>
     </div>
     <p>Kontakt: mototoursepic@gmail.com</p>
     <p>&copy; 2025 Epic Moto Tours</p>
   </footer>
+  
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-image" src="" alt="Povečana slika" />
+    <span class="arrow left">&#10094;</span>
+    <span class="arrow right">&#10095;</span>
+  </div>
+
+
+
+
+
+
+<script>
+  let lastScrollY = window.scrollY;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > lastScrollY) {
+      // Scrollamo dol – skrij
+      header.classList.add("nav-hidden");
+    } else {
+      // Scrollamo gor – pokaži
+      header.classList.remove("nav-hidden");
+    }
+    lastScrollY = window.scrollY;
+  });
+</script>
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // trajanje animacije v ms
+    once: true // animacija samo ob prvem prikazu
+  });
+</script>
 
 <script>
   const hamburger = document.querySelector('.hamburger');
@@ -152,7 +219,128 @@
   hamburger.addEventListener('click', () => {
     nav.classList.toggle('open');
   });
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-image');
+  const images = Array.from(document.querySelectorAll('.lightbox-item'));
+  let currentIndex = 0;
+
+  images.forEach((img, i) => {
+    img.addEventListener('click', () => {
+      lightbox.classList.add('open');
+      lightboxImg.src = img.src;
+      currentIndex = i;
+    });
+  });
+
+  document.querySelector('.close').addEventListener('click', () => {
+    lightbox.classList.remove('open');
+  });
+
+  document.querySelector('.arrow.left').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  });
+
+  document.querySelector('.arrow.right').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  });
+
+  // Zapiranje z ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      lightbox.classList.remove('open');
+    }
+    if (e.key === 'ArrowLeft') {
+      document.querySelector('.arrow.left').click();
+    }
+    if (e.key === 'ArrowRight') {
+      document.querySelector('.arrow.right').click();
+    }
+  });
+
+
+  const slides = document.querySelectorAll('.slide');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+  let current = 0;
+  let interval = setInterval(nextSlide, 5000);
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  }
+
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    resetInterval();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+    resetInterval();
+  });
+
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 5000);
+  }
+
+  // Tudi puščice na tipkovnici
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      nextSlide();
+      resetInterval();
+    }
+    if (e.key === 'ArrowLeft') {
+      prevSlide();
+      resetInterval();
+    }
+  });
 </script>
+<script>
+  let motorStarted = false;
+
+  AOS.init(); // Če še ni inicializirano
+
+  // Funkcija za preverjanje vidnosti elementa
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+  }
+
+  window.addEventListener('scroll', () => {
+    const motor = document.getElementById('motor-container');
+
+    if (!motorStarted && isInViewport(motor)) {
+      motorStarted = true;
+
+      // Začni Lottie
+      lottie.loadAnimation({
+        container: document.getElementById('motorLottie'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'motor-animation.json'
+      });
+
+      // Začni premik
+      motor.classList.add('move-now');
+    }
+  });
+</script>
+
 
 </body>
 </html>
